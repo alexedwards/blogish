@@ -83,12 +83,11 @@ This Array can then be passed to your view file, or wherever else you need to us
 
 Syntax highlighting is supported out of the box thanks to [Rouge](https://github.com/jayferd/rouge). A list of supported languages is [here](http://rouge.jayferd.us/demo). Simply wrap any code in your markdown files in fenced blocks, github style.
 
-```text
-&#96;&#96;&#96;ruby
-# This is my code
+<pre><code>```ruby
+# This is a comment
 @foo = bar
-&#96;&#96;&#96;
 ```
+</code></pre>
 
 ## Contributing
 
