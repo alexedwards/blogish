@@ -2,7 +2,7 @@
 
 Blogish is a tiny and powerful blogging engine, wrapped up in a Rubygem. It supports markdown-based entries, RSS feeds and syntax highlighting.
 
-It aims to provide the functions you need to create and display entries, without dictating site layout or design. That makes it well suited for situations where you want to incorporate a simple blog into an pre-existing site.
+It aims to provide the functions you need to create and display entries, but without dictating site layout or design. That makes it well suited for situations where you want to incorporate a simple blog into an pre-existing site.
 
 ## Installation
 
@@ -28,13 +28,13 @@ require 'blogish'
 
 Blogish reads entries stored in flat [markdown](http://daringfireball.net/projects/markdown/) files in a `views/blog` directory.
 
-It relies on certain conventions to work. Each entry should be named using the date of the entry and the URL slug for the post, separated by an underscore and with the `.mkd` extension.
+It relies on certain conventions to work. Each entry should be named using the date of the entry and the URL slug, separated by an underscore and with the `.mkd` extension.
 
 ```
 <date>_<slug>.mkd
 ```
 
-The first line of the each entry should contain the title of the post, then three dashes to separate it from the main body of the post. For example:
+The first line of the each entry should contain its title, then three dashes to separate it from the main body of the entry. Putting it all together:
 
 ```
 $ cat views/blog/2013-02-07_hello-world.mkd
@@ -42,7 +42,9 @@ Hello World!
 ---
 This is the first paragraph.
 
-This is the second paragraph. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic porro quae ea amet dolores quibusdam magni illum harum unde tempore nisi totam adipisci quisquam aliquid quis ab necessitatibus? Mollitia explicabo aperiam asperiores doloremque officiis ipsam. Animi distinctio a dolor consequuntur.
+This is the second paragraph. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic porro quae ea amet 
+dolores quibusdam magni illum harum unde tempore nisi totam adipisci quisquam aliquid quis ab necessitatibus? 
+Mollitia explicabo aperiam asperiores doloremque officiis ipsam. Animi distinctio a dolor consequuntur.
 ```
 
 ### Displaying a post
@@ -53,7 +55,7 @@ You can display a single post based on it's slug using the `fetch` method. For e
 Blogish.fetch('hello-world')
 ```
 
-If no entry with a matching slug is found, the method returns `nil`. If a matching entry is found, then a Hash with the contents of the post is returned.
+If a matching entry is found, then a Hash with the contents of the post is returned. This Hash can then be passed to your view file, or wherever else you need to use the information.
 
 ```
 {
@@ -65,9 +67,9 @@ If no entry with a matching slug is found, the method returns `nil`. If a matchi
 }
 ```
 
-This Hash can then be passed to your view file, or wherever else you need to use it.
+If no entry with a matching slug is found, the method returns `nil`. 
 
-### Display multiple posts
+### Displaying multiple posts
 
 You can also display all entries using the `fetch_all` method. This returns an Array of all entries in the directory, sorted with the most recently dated first.
 
@@ -81,11 +83,12 @@ This Array can then be passed to your view file, or wherever else you need to us
 
 Syntax highlighting is supported out of the box thanks to [Rouge](https://github.com/jayferd/rouge). A list of supported languages is [here](http://rouge.jayferd.us/demo). Simply wrap any code in your markdown files in fenced blocks, github style.
 
-  ```ruby
-  # This is my code
-  @foo = bar
-  ```
-
+```text
+&#96;&#96;&#96;ruby
+# This is my code
+@foo = bar
+&#96;&#96;&#96;
+```
 
 ## Contributing
 
