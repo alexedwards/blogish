@@ -54,12 +54,12 @@ module Blogish
   private
 
   def entries
-    Dir.chdir("views/blog") { glob("*.mkd") }
+    Dir.chdir("views/blog") { Dir.glob("*.mkd") }
   end
 
   def open(path)
     date, slug = path.chomp('.mkd').split('_', 2)
-    title, body = File.read(path).split(/^---+$/, 2)
+    title, body = File.read("views/blog/#{ path }").split(/^---+$/, 2)
     date = Date.parse(date)
     title.strip!
     body = convert_to_html(body).strip

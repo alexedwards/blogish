@@ -5,9 +5,9 @@ describe Blogish do
 
   before :each do
     Blogish.stub!(:entries).and_return(['2013-02-03_hello-world.mkd', '2013-02-05_an-example-post.mkd', '2013-02-04_another-example-post.mkd'])
-    File.stub!(:read).with('2013-02-03_hello-world.mkd').and_return("Hello World\n---\nThis is an introduction.\n\nLorem ipsum dolor et sans.")
-    File.stub!(:read).with('2013-02-05_an-example-post.mkd').and_return("An Example Post\n---\nLorem ipsum dolor et sans.")
-    File.stub!(:read).with('2013-02-04_another-example-post.mkd').and_return("Another Example Post\n---\nLorem ipsum dolor et sans.")
+    File.stub!(:read).with('views/blog/2013-02-03_hello-world.mkd').and_return("Hello World\n---\nThis is an introduction.\n\nLorem ipsum dolor et sans.")
+    File.stub!(:read).with('views/blog/2013-02-05_an-example-post.mkd').and_return("An Example Post\n---\nLorem ipsum dolor et sans.")
+    File.stub!(:read).with('views/blog/2013-02-04_another-example-post.mkd').and_return("Another Example Post\n---\nLorem ipsum dolor et sans.")
   end
 
   describe "#fetch" do
