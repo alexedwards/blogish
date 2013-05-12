@@ -1,6 +1,6 @@
 # Blogish
 
-Blogish is a tiny and powerful blogging engine, wrapped up in a Rubygem. It supports markdown-based entries, RSS feeds and syntax highlighting.
+Blogish is a neat and simple blogging engine, wrapped up in a Rubygem. It supports markdown-based entries and syntax highlighting.
 
 It aims to provide the functions you need to create and display entries, but without dictating site layout or design. That makes it well suited for situations where you want to incorporate a simple blog into an pre-existing site.
 
@@ -42,8 +42,8 @@ Hello World!
 ---
 This is the first paragraph.
 
-This is the second paragraph. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic porro quae ea amet 
-dolores quibusdam magni illum harum unde tempore nisi totam adipisci quisquam aliquid quis ab necessitatibus? 
+This is the second paragraph. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic porro quae ea amet
+dolores quibusdam magni illum harum unde tempore nisi totam adipisci quisquam aliquid quis ab necessitatibus?
 Mollitia explicabo aperiam asperiores doloremque officiis ipsam. Animi distinctio a dolor consequuntur.
 ```
 
@@ -67,7 +67,7 @@ If a matching entry is found, then a Hash with the contents of the post is retur
 }
 ```
 
-If no entry with a matching slug is found, the method returns `nil`. 
+If no entry with a matching slug is found, the method returns `nil`.
 
 ### Displaying multiple posts
 
